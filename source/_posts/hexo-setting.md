@@ -33,6 +33,7 @@ categories: 工具使用配置
 
 1. 可以通过创建新的仓库专门用于保存源码，也可以在当前仓库创建新的分支用于保存
 2. 我使用的创建新分支保存
+
 #### 本地创建新分支
 ```bash
     git checkout -b feature/hexo-source
@@ -42,4 +43,35 @@ categories: 工具使用配置
     git add .
     git commit -m '源码提交'
     git push origin feature/hexo-source
+```
+
+
+### 创建一个博客
+
+#### 安装hexo-cli
+```bash
+    npm install -g hexo-cli
+```
+#### 创建hexo文件夹
+```bash
+    hexo init
+```
+#### 安装依赖包
+```bash
+    npm install
+```
+
+### 更换成其他博客主题
+我这里的都是以某一个为主题效果的，当然每个人喜欢的可能不一样，所以索性把如何修改主题也放到这里
+#### 可选择的博客主题地址 
+[博客地址](https://hexo.io/themes/)
+
+#### 更换步骤
+1. 选择一个喜欢的主题，如图所示，点击下方的名字，进入github仓库地址
+<img src='http://pytyayr4p.bkt.clouddn.com/QQ20191011-132123@2x.png' width=500/>
+
+2. 复制他的下载地址，并且更换配置主题
+```bash
+    git clone xxx themes/主题名
+    在最外围的_config.yml中修改theme的值
 ```

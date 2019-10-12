@@ -8,15 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue中标签绑定class的写法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="vue">
+  <meta name="description" content="绑定class的形式比较多，都记录一下日常使用到的东西">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中标签绑定class的写法">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/vue-class-bind/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="绑定class的形式比较多，都记录一下日常使用到的东西">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-11T12:43:35.333Z">
+<meta property="og:updated_time" content="2019-10-12T15:18:44.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中标签绑定class的写法">
+<meta name="twitter:description" content="绑定class的形式比较多，都记录一下日常使用到的东西">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,7 +155,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>绑定class的形式比较多，都记录一下日常使用到的东西</p>
+<a id="more"></a>
+<h4 id="对象形式"><a href="#对象形式" class="headerlink" title="对象形式"></a>对象形式</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:class="&#123;'class1': data1, 'class2': data2&#125;" # data1和data2是变量</span><br></pre></td></tr></table></figure>
+
+<h4 id="三元运算符形式"><a href="#三元运算符形式" class="headerlink" title="三元运算符形式"></a>三元运算符形式</h4><p>还可以放进数组中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"条件 ? 'class1' : 'class2'"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数组形式"><a href="#数组形式" class="headerlink" title="数组形式"></a>数组形式</h4><p>对于同时存在固定类名和动态的可以使用数组形式</p>
+<ul>
+<li><p>单纯的数组形式</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:class="['class1', 'class2']" # 或者class="class1 class2"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组结合三元运算符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[条件 ? 'class1' : 'class2', 'class1']"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组结合对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"['class1', &#123;'class2': data2&#125;]"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组结合对象和三元</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[条件 ? 'class1' : 'class2', 'class1', &#123;'class3': data3&#125;]"</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
 
       

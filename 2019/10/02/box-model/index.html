@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue中标签绑定class的写法 | Hexo</title>
+  <title>box-model | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="绑定class的形式比较多，都记录一下日常使用到的东西">
-<meta name="keywords" content="vue">
+  <meta name="description" content="盒模型一共有两种模式：W3C标准模式和IE怪异模式W3C标准模式也就是标准盒模型IE怪异模式也就是IE盒模型、怪异盒模型">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue中标签绑定class的写法">
-<meta property="og:url" content="http://yoursite.com/2019/08/02/vue-class-bind/index.html">
+<meta property="og:title" content="box-model">
+<meta property="og:url" content="http://yoursite.com/2019/10/02/box-model/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="绑定class的形式比较多，都记录一下日常使用到的东西">
+<meta property="og:description" content="盒模型一共有两种模式：W3C标准模式和IE怪异模式W3C标准模式也就是标准盒模型IE怪异模式也就是IE盒模型、怪异盒模型">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-12T15:18:44.865Z">
+<meta property="og:image" content="http://pytyayr4p.bkt.clouddn.com/%E6%A0%87%E5%87%86%E7%9B%92%E6%A8%A1%E5%9E%8B">
+<meta property="og:image" content="http://pytyayr4p.bkt.clouddn.com/ie%E7%9B%92%E6%A8%A1%E5%9E%8B">
+<meta property="og:updated_time" content="2019-10-13T05:02:25.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中标签绑定class的写法">
-<meta name="twitter:description" content="绑定class的形式比较多，都记录一下日常使用到的东西">
+<meta name="twitter:title" content="box-model">
+<meta name="twitter:description" content="盒模型一共有两种模式：W3C标准模式和IE怪异模式W3C标准模式也就是标准盒模型IE怪异模式也就是IE盒模型、怪异盒模型">
+<meta name="twitter:image" content="http://pytyayr4p.bkt.clouddn.com/%E6%A0%87%E5%87%86%E7%9B%92%E6%A8%A1%E5%9E%8B">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -135,46 +138,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-class-bind" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-box-model" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue中标签绑定class的写法
+      box-model
     </h1>
   
 
         
-        <a href="/2019/08/02/vue-class-bind/" class="archive-article-date">
-  	<time datetime="2019-08-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+        <a href="/2019/10/02/box-model/" class="archive-article-date">
+  	<time datetime="2019-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>绑定class的形式比较多，都记录一下日常使用到的东西</p>
+        <p>盒模型一共有两种模式：W3C标准模式和IE怪异模式<br>W3C标准模式也就是标准盒模型<br>IE怪异模式也就是IE盒模型、怪异盒模型</p>
 <a id="more"></a>
-<h4 id="对象形式"><a href="#对象形式" class="headerlink" title="对象形式"></a>对象形式</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:class="&#123;'class1': data1, 'class2': data2&#125;" # data1和data2是变量</span><br></pre></td></tr></table></figure>
+<h4 id="标准盒模型"><a href="#标准盒模型" class="headerlink" title="标准盒模型"></a>标准盒模型</h4><img src="http://pytyayr4p.bkt.clouddn.com/%E6%A0%87%E5%87%86%E7%9B%92%E6%A8%A1%E5%9E%8B" width="200">
 
-<h4 id="三元运算符形式"><a href="#三元运算符形式" class="headerlink" title="三元运算符形式"></a>三元运算符形式</h4><p>还可以放进数组中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"条件 ? 'class1' : 'class2'"</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="数组形式"><a href="#数组形式" class="headerlink" title="数组形式"></a>数组形式</h4><p>对于同时存在固定类名和动态的可以使用数组形式</p>
 <ul>
-<li><p>单纯的数组形式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:class="['class1', 'class2']" # 或者class="class1 class2"</span><br></pre></td></tr></table></figure>
+<li>在标准盒模型下，width和height是content的width和height。默认情况下，我们设置的width和height就是针对content区域的。</li>
+<li>其元素框的总宽度 = width + padding(左右) + border(左右) + margin(左右)</li>
+<li>其元素狂的总高度 = height + padding(上下) + border(上下) + margin(上下)</li>
+<li>通常我们设置背景色，就是包含content、padding、border，如果border设置了自己的颜色，那就显示其设置的颜色</li>
+</ul>
+<h4 id="IE盒模型"><a href="#IE盒模型" class="headerlink" title="IE盒模型"></a>IE盒模型</h4><img src="http://pytyayr4p.bkt.clouddn.com/ie%E7%9B%92%E6%A8%A1%E5%9E%8B" width="200">
+
+<ul>
+<li>在该模型下，width和height表示的是 content的width和height + padding + border这几个部分，设置的width和height就是几个部分的宽高</li>
+<li>其元素框的总宽度 = width + margin(左右)</li>
+<li>其元素狂的总高度 = height + margin(上下)</li>
+</ul>
+<h4 id="什么情况下触发这些模型"><a href="#什么情况下触发这些模型" class="headerlink" title="什么情况下触发这些模型"></a>什么情况下触发这些模型</h4><ul>
+<li><p>在文档首部加了doctype申明，即使用了标准盒模型，不加的话，则由浏览器自己决定使用什么模型，比如，ie 浏览器（<font color="red">通常说的“IE盒子模型”指的是IE5.5，不过也有的说是IE8以下的会这样</font>）中显示“ie盒子模型”，在 ff 浏览器中显示“标准 w3c 盒子模型”。</p>
 </li>
-<li><p>数组结合三元运算符</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[条件 ? 'class1' : 'class2', 'class1']"</span></span><br></pre></td></tr></table></figure>
+<li><p>也可以通过css3的属性box-sizing来指定选择什么模型</p>
 </li>
-<li><p>数组结合对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"['class1', &#123;'class2': data2&#125;]"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数组结合对象和三元</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[条件 ? 'class1' : 'class2', 'class1', &#123;'class3': data3&#125;]"</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -189,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -256,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/02/vue-class-bind/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/02/box-model/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,15 +275,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/12/markdown-2-pdf/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/03/js-check-browser-type/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          markdown-2-pdf
+          js判断浏览器类型
         
       </div>
     </a>
   
+  
+    <a href="/2019/08/12/markdown-2-pdf/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">markdown-2-pdf</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

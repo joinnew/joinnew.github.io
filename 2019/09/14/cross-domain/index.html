@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js判断浏览器类型 | Hexo</title>
+  <title>cross-domain跨域解决方案 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
-<meta name="keywords" content="js,判断浏览器类型">
+  <meta name="description" content="跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。而广义上的跨域包括资源跳转（链接、重定向等）、资源嵌入（iframe）、脚本请求我们通常所说的跨域是狭义上的，是由浏览器同源策略限制的一类请求场景。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js判断浏览器类型">
-<meta property="og:url" content="http://yoursite.com/2019/10/03/js-check-browser-type/index.html">
+<meta property="og:title" content="cross-domain跨域解决方案">
+<meta property="og:url" content="http://yoursite.com/2019/09/14/cross-domain/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta property="og:description" content="跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。而广义上的跨域包括资源跳转（链接、重定向等）、资源嵌入（iframe）、脚本请求我们通常所说的跨域是狭义上的，是由浏览器同源策略限制的一类请求场景。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-13T05:35:59.326Z">
+<meta property="og:updated_time" content="2019-10-15T03:58:06.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js判断浏览器类型">
-<meta name="twitter:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta name="twitter:title" content="cross-domain跨域解决方案">
+<meta name="twitter:description" content="跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。而广义上的跨域包括资源跳转（链接、重定向等）、资源嵌入（iframe）、脚本请求我们通常所说的跨域是狭义上的，是由浏览器同源策略限制的一类请求场景。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -135,35 +134,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-check-browser-type" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-cross-domain" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js判断浏览器类型
+      cross-domain跨域解决方案
     </h1>
   
 
         
-        <a href="/2019/10/03/js-check-browser-type/" class="archive-article-date">
-  	<time datetime="2019-10-03T05:03:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+        <a href="/2019/09/14/cross-domain/" class="archive-article-date">
+  	<time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>判断浏览器类型，可以用于兼容，比如创建ajax请求</p>
+        <p>跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。<br>而广义上的跨域包括资源跳转（链接、重定向等）、资源嵌入（iframe）、脚本请求<br>我们通常所说的跨域是狭义上的，是由浏览器同源策略限制的一类请求场景。</p>
 <a id="more"></a>
 
-<h4 id="不考虑版本的区分浏览器"><a href="#不考虑版本的区分浏览器" class="headerlink" title="不考虑版本的区分浏览器"></a>不考虑版本的区分浏览器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkBrowser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> explorer = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!!<span class="built_in">window</span>.ActiveXObject || <span class="string">'ActiveXObject'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">            <span class="comment">// window.ActiveXObject的作用是用来判断浏览器是否支持ActiveX控件</span></span><br><span class="line">            <span class="comment">// ActiveXObject在以下文档模式中受支持：Quirks、Internet Explorer 6 标准、Internet Explorer 7 标准、Internet Explorer 8 标准、Internet Explorer 9 标准、Internet Explorer 10 标准和 Internet Explorer 11 标准</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 区分具体的ie版本</span></span><br><span class="line">            <span class="comment">// let reIE = new RegExp("MSIE (\\d+\\.\\d+);");</span></span><br><span class="line">            <span class="comment">// reIE.test(explorer);</span></span><br><span class="line">            <span class="comment">// let fIEVersion = parseFloat(RegExp["$1"]);</span></span><br><span class="line">            <span class="comment">// IE6 = fIEVersion == 6.0;</span></span><br><span class="line">            <span class="comment">// IE7 = fIEVersion == 7.0;</span></span><br><span class="line">            <span class="comment">// IE8 = fIEVersion == 8.0;</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'ie'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Firefox'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Firefox'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Chrome'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Chrome'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Safari'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Safari'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="创建ajax"><a href="#创建ajax" class="headerlink" title="创建ajax"></a>创建ajax</h4><ul>
-<li>新建XMLHttprequest的对象，ie只有11以上才行，而且还是部分支持。对于ie，我们可以通过ActiveXObject来实现</li>
+<h4 id="同源策略（SOP-same-origin-policy）的理解"><a href="#同源策略（SOP-same-origin-policy）的理解" class="headerlink" title="同源策略（SOP - same origin policy）的理解"></a>同源策略（SOP - same origin policy）的理解</h4><ul>
+<li>同源就是指“协议 + 域名 + 端口”三个部分要相同，有其中一个不同就意味着不同源，如果缺少了同源策略，就容易受到XSS、CSFR（后面的博客会进行解释）等攻击。</li>
+<li>同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</li>
+<li>同源策略会限制的地方：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttpRequest</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlHttp ;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="comment">//FF,Opera,Safari  </span></span><br><span class="line">       xmlHttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">       <span class="keyword">try</span>&#123;  </span><br><span class="line">           <span class="comment">//支持IE6.0+  </span></span><br><span class="line">            xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);  </span><br><span class="line">       &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">           <span class="keyword">try</span>&#123;  </span><br><span class="line">              <span class="comment">//支持IE5.5+  </span></span><br><span class="line">              xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">           &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">              alert(<span class="string">"提示: 您的浏览器暂时不支持Ajax请求!"</span>);  </span><br><span class="line">              <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">           &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> xmlHttp;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.Cookie、LocalStorage 和 IndexDB 无法读取<br>2.DOM 和 Js对象无法获得<br>3.AJAX 请求不能发送 同源策略还应用于使用XMLHttpRequest生成的HTTP请求。（这也就是为什么我们常用的Ajax请求会受到同源策略影响的原因了）这个对象允许客户端JavaScript生成任意的HTTP请求到脚本所属文档的Web服务器，但是不允许脚本和其他Web服务器通信。</p>
+<h4 id="跨域解决方案"><a href="#跨域解决方案" class="headerlink" title="跨域解决方案"></a>跨域解决方案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. jsonp</span><br><span class="line">2. document.domain + iframe跨域</span><br><span class="line">3. location.hash + iframe跨域</span><br><span class="line">4. window.name + iframe跨域</span><br><span class="line">5. postMessage跨域</span><br><span class="line">6. 跨域资源共享（CORS）</span><br><span class="line">7. nginx代理跨域</span><br><span class="line">8. nodejs中间件代理跨域</span><br><span class="line">9. WebSocket协议跨域</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>jsonp的形式 - 其实是利用script的src的不受同源策略限制特性，执行回调函数<h5 id="为什么JSONP跨域的script标签请求不受同源策略限制呢？"><a href="#为什么JSONP跨域的script标签请求不受同源策略限制呢？" class="headerlink" title="为什么JSONP跨域的script标签请求不受同源策略限制呢？"></a>为什么JSONP跨域的script标签请求不受同源策略限制呢？</h5>要理解这个问题的重点就在于：<strong>要执行的脚本是如何判断他的来源的</strong><br>脚本的来源取决于脚本所嵌入的资源的来源，比如说访问A主机的当前HTML文件中有一个script标签，这个script标签的src属性请求了一个js脚本，因为这个脚本是由A主机的HTML文件的嵌入的script标签发起请求获取的，因此这个脚本的来源是属于A主机的。</li>
+</ol>
+<p>到了这里，问题的答案也就出来了，jsonp的script标签请求回来的资源与当前域是相同的域，因此不受同源策略的影响</p>
+<ul>
+<li>用例</li>
+</ul>
+<p>1.原生实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 首先动态创建一个script标签</span></span><br><span class="line">    <span class="keyword">var</span> cScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 利用其src属性发起请求（其实也就限制了请求的方式get形式），重点：需要传输一个回调函数名，方便后端返回时可以执行这个回调函数</span></span><br><span class="line">    cScript.src = <span class="string">'http://www.domain.com:8080/test?name=3213&amp;callback=requestCallback'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 我们需要定义这个回调函数，后端会把请求到的数据传入</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">requestCallback</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">        alert(<span class="built_in">JSON</span>.stringify(res));</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.vue实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$http.jsonp(<span class="string">'http://www.domain.com/test'</span>, &#123;</span><br><span class="line">    params: &#123;&#125;,</span><br><span class="line">    jsonp: <span class="string">'requestCallback'</span></span><br><span class="line">&#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res); </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>后端处理后会返回，返回时即执行全局函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requestCallback(&#123;<span class="string">"status"</span>: <span class="literal">true</span>, <span class="string">"name"</span>: <span class="string">"3213"</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>document.domain + iframe跨域<br>此方案仅限主域相同，子域不同的跨域应用场景，<strong>属于跨子域的的交互</strong></li>
+</ol>
+<p><font color="red">实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。这样两个页面的js就能进行交互</font></p>
+<ul>
+<li>用例</li>
+</ul>
+<p>1.父窗口：<a href="http://www.domain.com/a.html" target="_blank" rel="noopener">http://www.domain.com/a.html</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">'iframe'</span> <span class="attr">src</span>=<span class="string">'http://children.domain.com/b.html'</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.domain = <span class="string">'domain.com'</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> name = <span class="string">'3213'</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.子窗口: <a href="http://children.domain.com/b.html" target="_blank" rel="noopener">http://children.domain.com/b.html</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">document</span>.domain = <span class="string">'domain.com'</span>;</span><br><span class="line">    alert(<span class="string">'父窗口的数据'</span> + <span class="built_in">window</span>.parent.name);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>不过直接修改document.domain会存在一些问题，这边记录下</strong></p>
+<ul>
+<li>如果页面修改了document.domain，则它包含的iframe，必须也设domain，才能进行交互。就算是同域的页面也必须要设。</li>
+<li>设置document.doamin，也会影响到其它跟iframe有关的功能。<br>　　典型的功能如：富文本编辑器（因为是iframe来做富文本编辑器的</li>
+<li>设置document.doamin，导致ie6下无法向一个iframe提交表单。<a href="https://www.cnblogs.com/pigtail/archive/2012/06/06/2528136.html" target="_blank" rel="noopener">解决方案</a></li>
+</ul>
+<ol start="3">
+<li>location.hash + iframe跨域</li>
+</ol>
+<p><strong>实现原理： a想与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间则直接js访问来通信。</strong><br>具体实现：A域：a.html -&gt; B域：b.html -&gt; A域：c.html，a与b不同域只能通过hash值单向通信，b与c也不同域也只能单向通信，但c与a同域，所以c可通过parent.parent访问a页面所有对象。</p>
+<ul>
+<li>用例</li>
+</ul>
+<p>1.a.html(<a href="http://www.domain1.com/a.html" target="_blank" rel="noopener">http://www.domain1.com/a.html</a>) <strong>A域</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 嵌入b页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">'iframe'</span> <span class="attr">src</span>=<span class="string">'http://www.domain2.com/b.html'</span> <span class="attr">style</span>=<span class="string">'display:none;'</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 向b.html传hash值，也就是修改iframe.src的值</span></span></span><br><span class="line"><span class="actionscript">    setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        iframe.src = iframe.src + <span class="string">'#name=3213'</span>;</span></span><br><span class="line">    &#125;, 1000);</span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">// 开放给同域c.html的回调方法</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">onCallback</span><span class="params">(res)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="string">'同域的数据'</span> + res);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.b.html(<a href="http://www.domain2.com/b.html" target="_blank" rel="noopener">http://www.domain2.com/b.html</a>) <strong>B域</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 嵌入c页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">"iframe"</span> <span class="attr">src</span>=<span class="string">"http://www.domain1.com/c.html"</span> <span class="attr">style</span>=<span class="string">"display:none;"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 监听a.html传来的hash值 - location.hash，再传给c.html。当然也可以做其他操作，传输其他值。</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        iframe.src = iframe.src + location.hash;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>3.c.html(<a href="http://www.domain1.com/c.html" target="_blank" rel="noopener">http://www.domain1.com/c.html</a>) <strong>A域</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 监听b.html传来的hash值</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 再通过操作同域a.html的js回调，将结果传回</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.parent.parent.onCallback(<span class="string">'hello: '</span> + location.hash.replace(<span class="string">'#name='</span>, <span class="string">''</span>));</span></span><br><span class="line">    &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>window.name + iframe跨域</li>
+</ol>
+<p><strong>通过iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。</strong><br>window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。</p>
+<ol start="5">
+<li>postMessage跨域<br>postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，他可以用于解决以下问题：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 页面和其打开的新窗口的数据传递</span><br><span class="line">2. 多窗口之间消息传递</span><br><span class="line">3. 页面与嵌套的iframe消息传递</span><br><span class="line">4. 上面三个场景的跨域数据传递</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>如何使用：otherWiindow.postMessage(data, origin) - 其他窗口的一个引用，比如iframe的contentWindow属性、执行window.open返回的窗口对象、或者是命名过或数值索引的window.frames。 - data： html5规范支持任意基本类型或可复制的对象，但部分浏览器只支持字符串，所以传参时最好用JSON.stringify()序列化。 - origin： 协议+主机+端口号，也可以设置为”*”，表示可以传递给任意窗口，如果要指定和当前窗口同源的话设置为”/“。</p>
+</li>
+<li><p>用例：</p>
+</li>
+</ul>
+<p>1.a.html(<a href="http://www.domain1.com/a.html" target="_blank" rel="noopener">http://www.domain1.com/a.html</a>)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">"iframe"</span> <span class="attr">src</span>=<span class="string">"http://www.domain2.com/b.html"</span> <span class="attr">style</span>=<span class="string">"display:none;"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>       </span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</span></span><br><span class="line"><span class="actionscript">    iframe.onload = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> data = &#123;</span></span><br><span class="line"><span class="actionscript">            name: <span class="string">'3213'</span></span></span><br><span class="line">        &#125;;</span><br><span class="line"><span class="actionscript">        <span class="comment">// 向domain2传送跨域数据</span></span></span><br><span class="line"><span class="javascript">        iframe.contentWindow.postMessage(<span class="built_in">JSON</span>.stringify(data), <span class="string">'http://www.domain2.com'</span>);</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">// 接受domain2返回数据</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="string">'来自domain2的数据： '</span> + e.data);</span></span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2.b.html(<a href="http://www.domain2.com/b.html" target="_blank" rel="noopener">http://www.domain2.com/b.html</a>)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 接收domain1的数据</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">        alert(<span class="string">'来自domain1的数据'</span> + e.data);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(e.data);</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">if</span> (data) &#123;</span></span><br><span class="line">            data.number = 16;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="comment">// 处理后再发回domain1</span></span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.parent.postMessage(<span class="built_in">JSON</span>.stringify(data), <span class="string">'http://www.domain1.com'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>安全问题</strong></p>
+<ul>
+<li>如果不希望从其他网站接收message，不要为message事件添加任何事件侦听器。 </li>
+<li>希望从其他网站接收message，始终使用origin和source属性验证发件人的身份，验证身份后最好验证接收到的语法。</li>
+<li>当使用postMessage将数据发送到其他窗口时，始终指定精确的目标origin，而不是*</li>
+</ul>
+<ol start="6">
+<li>跨域资源共享（CORS）<br>普通的跨域请求：服务器设置Access-Control-Allow-Origin即可，前端则不用设置。如果要带cookie请求，那前后端都要设置了</li>
+</ol>
+<p><strong>需注意的是：由于同源策略的限制，所读取的cookie为跨域请求接口所在域的cookie，而非当前页。</strong><br><strong>目前，所有浏览器都支持该功能(IE8+：IE8/9需要使用XDomainRequest对象来支持CORS）)，CORS也已经成为主流的跨域解决方案。</strong></p>
+<ul>
+<li>用例(带cookie请求)：</li>
+</ul>
+<p>1.前端设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 原生ajax</span></span><br><span class="line">var xhr = new XMLHttpRequest(); // IE8/9需用window.XDomainRequest兼容</span><br><span class="line">// 前端设置是否带cookie</span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">'post'</span>, <span class="string">'http://www.domain2.com:8080/login'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">xhr.send(<span class="string">'user=admin'</span>);</span><br><span class="line"></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState == 4 &amp;&amp; xhr.status == 200) &#123;</span><br><span class="line">        alert(xhr.responseText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment"># vue框架 - axios</span></span><br><span class="line">axios.defaults.withCredentials = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>2.服务端设置<br><strong>若后端设置成功，前端浏览器控制台则不会出现跨域报错信息，反之，说明没设成功。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">'http'</span>);</span><br><span class="line">var server = http.createServer();</span><br><span class="line">var qs = require(<span class="string">'querystring'</span>);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">'request'</span>, <span class="keyword">function</span>(req, res) &#123;</span><br><span class="line">    var postData = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">    // 数据块接收中</span><br><span class="line">    req.addListener(<span class="string">'data'</span>, <span class="keyword">function</span>(chunk) &#123;</span><br><span class="line">        postData += chunk;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 数据接收完毕</span><br><span class="line">    req.addListener(<span class="string">'end'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        postData = qs.parse(postData);</span><br><span class="line"></span><br><span class="line">        // 跨域后台设置</span><br><span class="line">        res.writeHead(200, &#123;</span><br><span class="line">            <span class="string">'Access-Control-Allow-Credentials'</span>: <span class="string">'true'</span>,     // 后端允许发送Cookie</span><br><span class="line">            <span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'http://www.domain1.com'</span>,    // 允许访问的域（协议+域名+端口）</span><br><span class="line">            /* </span><br><span class="line">             * 此处设置的cookie还是domain2的而非domain1，因为后端也不能跨域写cookie(nginx反向代理可以实现)，</span><br><span class="line">             * 但只要domain2中写入一次cookie认证，后面的跨域接口都能从domain2中获取cookie，从而实现所有的接口都能跨域访问</span><br><span class="line">             */</span><br><span class="line">            <span class="string">'Set-Cookie'</span>: <span class="string">'l=a123456;Path=/;Domain=www.domain2.com;HttpOnly'</span>  // HttpOnly的作用是让js无法读取cookie</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        res.write(JSON.stringify(postData));</span><br><span class="line">        res.end();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="string">'8080'</span>);</span><br><span class="line">console.log(<span class="string">'Server is running at port 8080...'</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>nginx代理跨域<h5 id="nginx配置解决iconfont跨域"><a href="#nginx配置解决iconfont跨域" class="headerlink" title="nginx配置解决iconfont跨域"></a>nginx配置解决iconfont跨域</h5></li>
+</ol>
+<ul>
+<li>浏览器跨域访问js、css、img等常规静态资源被同源策略许可，但iconfont字体文件(eot|otf|ttf|woff|svg)例外，此时可在nginx的静态资源服务器中加入以下配置。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    add_header Access-Control-Allow-Origin *;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="nginx反向代理接口跨域"><a href="#nginx反向代理接口跨域" class="headerlink" title="nginx反向代理接口跨域"></a>nginx反向代理接口跨域</h5><p><strong>跨域原理： 同源策略是浏览器的安全策略，不是HTTP协议的一部分。服务器端调用HTTP接口只是使用HTTP协议，不会执行JS脚本，不需要同源策略，也就不存在跨越问题。</strong></p>
+<p>前端则是<br><strong>实现思路：通过nginx配置一个代理服务器（域名与domain1相同，端口不同）做跳板机，反向代理访问domain2接口，并且可以顺便修改cookie中domain信息，方便当前域cookie写入，实现跨域登录。</strong></p>
+<ul>
+<li>nginx具体配置：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#proxy服务器</span></span><br><span class="line">server &#123;</span><br><span class="line">    listen       81;</span><br><span class="line">    server_name  www.domain1.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass   http://www.domain2.com:8080;  <span class="comment">#反向代理</span></span><br><span class="line">        proxy_cookie_domain www.domain2.com www.domain1.com; <span class="comment">#修改cookie里域名</span></span><br><span class="line">        index  index.html index.htm;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 当用webpack-dev-server等中间件代理接口访问nginx时，此时无浏览器参与，故没有同源限制，下面的跨域配置可不启用</span></span><br><span class="line">        add_header Access-Control-Allow-Origin http://www.domain1.com;  <span class="comment">#当前端只跨域不带cookie时，可为*</span></span><br><span class="line">        add_header Access-Control-Allow-Credentials <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>1.前端设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">// 前端开关：浏览器是否读写cookie</span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">// 访问nginx中的代理服务器 - 前端访问代理服务器</span><br><span class="line">xhr.open(<span class="string">'get'</span>, <span class="string">'http://www.domain1.com:81/?user=admin'</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+
+<p>2.nodejs后台</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">'http'</span>);</span><br><span class="line">var server = http.createServer();</span><br><span class="line">var qs = require(<span class="string">'querystring'</span>);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">'request'</span>, <span class="keyword">function</span>(req, res) &#123;</span><br><span class="line">    var params = qs.parse(req.url.substring(2));</span><br><span class="line"></span><br><span class="line">    // 向前台写cookie</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        <span class="string">'Set-Cookie'</span>: <span class="string">'l=a123456;Path=/;Domain=www.domain2.com;HttpOnly'</span>   // HttpOnly:脚本无法读取</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    res.write(JSON.stringify(params));</span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="string">'8080'</span>);</span><br><span class="line">console.log(<span class="string">'Server is running at port 8080...'</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>Nodejs中间件代理跨域</li>
+</ol>
+<ul>
+<li>node中间件实现跨域代理，原理大致与nginx相同，都是通过启一个代理服务器，实现数据的转发，也可以通过设置cookieDomainRewrite参数修改响应头中cookie中域名，实现当前域的cookie写入，方便接口登录认证。</li>
+</ul>
+<p>vue框架的跨域<br>利用node + webpack + webpack-dev-server代理接口跨域。在开发环境下，由于vue渲染服务和接口代理服务都是webpack-dev-server同一个，所以页面与代理接口之间不再跨域，无须设置headers跨域信息了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># webpack.config.js部分配置：</span></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &#123;&#125;,</span><br><span class="line">    module: &#123;&#125;,</span><br><span class="line">    ...</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">        proxy: [&#123;</span><br><span class="line">            context: <span class="string">'/login'</span>,</span><br><span class="line">            target: <span class="string">'http://www.domain2.com:8080'</span>,  // 代理跨域目标接口</span><br><span class="line">            changeOrigin: <span class="literal">true</span>,</span><br><span class="line">            secure: <span class="literal">false</span>,  // 当代理某些https服务报错时用</span><br><span class="line">            cookieDomainRewrite: <span class="string">'www.domain1.com'</span>  // 可以为<span class="literal">false</span>，表示不修改</span><br><span class="line">        &#125;],</span><br><span class="line">        noInfo: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>WebSocket协议跨域 - 不理解，暂时就写在这里<br>WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。<br>原生WebSocket API使用起来不太方便，我们使用Socket.io，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。</li>
+</ol>
+<p>1.前端代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;user input：&lt;input <span class="built_in">type</span>=<span class="string">"text"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var socket = io(<span class="string">'http://www.domain2.com:8080'</span>);</span><br><span class="line"></span><br><span class="line">// 连接成功处理</span><br><span class="line">socket.on(<span class="string">'connect'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    // 监听服务端消息</span><br><span class="line">    socket.on(<span class="string">'message'</span>, <span class="keyword">function</span>(msg) &#123;</span><br><span class="line">        console.log(<span class="string">'data from server: ---&gt; '</span> + msg); </span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 监听服务端关闭</span><br><span class="line">    socket.on(<span class="string">'disconnect'</span>, <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">        console.log(<span class="string">'Server socket has closed.'</span>); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">document.getElementsByTagName(<span class="string">'input'</span>)[0].onblur = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    socket.send(this.value);</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.Nodejs socket后台：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">'http'</span>);</span><br><span class="line">var socket = require(<span class="string">'socket.io'</span>);</span><br><span class="line"></span><br><span class="line">// 启http服务</span><br><span class="line">var server = http.createServer(<span class="keyword">function</span>(req, res) &#123;</span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">        <span class="string">'Content-type'</span>: <span class="string">'text/html'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="string">'8080'</span>);</span><br><span class="line">console.log(<span class="string">'Server is running at port 8080...'</span>);</span><br><span class="line"></span><br><span class="line">// 监听socket连接</span><br><span class="line">socket.listen(server).on(<span class="string">'connection'</span>, <span class="keyword">function</span>(client) &#123;</span><br><span class="line">    // 接收信息</span><br><span class="line">    client.on(<span class="string">'message'</span>, <span class="keyword">function</span>(msg) &#123;</span><br><span class="line">        client.send(<span class="string">'hello：'</span> + msg);</span><br><span class="line">        console.log(<span class="string">'data from client: ---&gt; '</span> + msg);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 断开处理</span><br><span class="line">    client.on(<span class="string">'disconnect'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(<span class="string">'Client socket has closed.'</span>); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
 
       
@@ -171,33 +300,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">判断浏览器类型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -247,7 +350,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/03/js-check-browser-type/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/14/cross-domain/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -261,18 +364,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/11/hexo-setting/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/02/box-model/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hexo-setting 配置
+          box-model
         
       </div>
     </a>
   
   
-    <a href="/2019/10/02/box-model/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">box-model</div>
+    <a href="/2019/08/16/curry/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">curry</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js判断浏览器类型 | Hexo</title>
+  <title>Archives: 2019/9 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
-<meta name="keywords" content="js,判断浏览器类型">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js判断浏览器类型">
-<meta property="og:url" content="http://yoursite.com/2019/10/03/js-check-browser-type/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-13T05:35:59.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js判断浏览器类型">
-<meta name="twitter:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -135,177 +130,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-check-browser-type" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      js判断浏览器类型
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/09/14/cross-domain/" class="archive-article-date">
+  	<time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/09/14/cross-domain/">cross-domain跨域解决方案</a>
     </h1>
   
 
-        
-        <a href="/2019/10/03/js-check-browser-type/" class="archive-article-date">
-  	<time datetime="2019-10-03T05:03:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>判断浏览器类型，可以用于兼容，比如创建ajax请求</p>
-<a id="more"></a>
+        <div class="article-info info-on-right">
+          
+          
 
-<h4 id="不考虑版本的区分浏览器"><a href="#不考虑版本的区分浏览器" class="headerlink" title="不考虑版本的区分浏览器"></a>不考虑版本的区分浏览器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkBrowser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> explorer = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!!<span class="built_in">window</span>.ActiveXObject || <span class="string">'ActiveXObject'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">            <span class="comment">// window.ActiveXObject的作用是用来判断浏览器是否支持ActiveX控件</span></span><br><span class="line">            <span class="comment">// ActiveXObject在以下文档模式中受支持：Quirks、Internet Explorer 6 标准、Internet Explorer 7 标准、Internet Explorer 8 标准、Internet Explorer 9 标准、Internet Explorer 10 标准和 Internet Explorer 11 标准</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 区分具体的ie版本</span></span><br><span class="line">            <span class="comment">// let reIE = new RegExp("MSIE (\\d+\\.\\d+);");</span></span><br><span class="line">            <span class="comment">// reIE.test(explorer);</span></span><br><span class="line">            <span class="comment">// let fIEVersion = parseFloat(RegExp["$1"]);</span></span><br><span class="line">            <span class="comment">// IE6 = fIEVersion == 6.0;</span></span><br><span class="line">            <span class="comment">// IE7 = fIEVersion == 7.0;</span></span><br><span class="line">            <span class="comment">// IE8 = fIEVersion == 8.0;</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'ie'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Firefox'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Firefox'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Chrome'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Chrome'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Safari'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Safari'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="创建ajax"><a href="#创建ajax" class="headerlink" title="创建ajax"></a>创建ajax</h4><ul>
-<li>新建XMLHttprequest的对象，ie只有11以上才行，而且还是部分支持。对于ie，我们可以通过ActiveXObject来实现</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttpRequest</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlHttp ;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="comment">//FF,Opera,Safari  </span></span><br><span class="line">       xmlHttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">       <span class="keyword">try</span>&#123;  </span><br><span class="line">           <span class="comment">//支持IE6.0+  </span></span><br><span class="line">            xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);  </span><br><span class="line">       &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">           <span class="keyword">try</span>&#123;  </span><br><span class="line">              <span class="comment">//支持IE5.5+  </span></span><br><span class="line">              xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">           &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">              alert(<span class="string">"提示: 您的浏览器暂时不支持Ajax请求!"</span>);  </span><br><span class="line">              <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">           &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> xmlHttp;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">判断浏览器类型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/03/js-check-browser-type/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/10/11/hexo-setting/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo-setting 配置
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/10/02/box-model/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">box-model</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -328,8 +195,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

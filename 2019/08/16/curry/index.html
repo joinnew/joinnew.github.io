@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js判断浏览器类型 | Hexo</title>
+  <title>curry | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
-<meta name="keywords" content="js,判断浏览器类型">
+  <meta name="description" content="在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个或多个参数的函数的技术。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js判断浏览器类型">
-<meta property="og:url" content="http://yoursite.com/2019/10/03/js-check-browser-type/index.html">
+<meta property="og:title" content="curry">
+<meta property="og:url" content="http://yoursite.com/2019/08/16/curry/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta property="og:description" content="在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个或多个参数的函数的技术。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-13T05:35:59.326Z">
+<meta property="og:updated_time" content="2019-10-13T08:00:05.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js判断浏览器类型">
-<meta name="twitter:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta name="twitter:title" content="curry">
+<meta name="twitter:description" content="在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个或多个参数的函数的技术。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -135,35 +135,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-check-browser-type" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-curry" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js判断浏览器类型
+      curry
     </h1>
   
 
         
-        <a href="/2019/10/03/js-check-browser-type/" class="archive-article-date">
-  	<time datetime="2019-10-03T05:03:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+        <a href="/2019/08/16/curry/" class="archive-article-date">
+  	<time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>判断浏览器类型，可以用于兼容，比如创建ajax请求</p>
+        <p>在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个或多个参数的函数的技术。</p>
 <a id="more"></a>
 
-<h4 id="不考虑版本的区分浏览器"><a href="#不考虑版本的区分浏览器" class="headerlink" title="不考虑版本的区分浏览器"></a>不考虑版本的区分浏览器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkBrowser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> explorer = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!!<span class="built_in">window</span>.ActiveXObject || <span class="string">'ActiveXObject'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">            <span class="comment">// window.ActiveXObject的作用是用来判断浏览器是否支持ActiveX控件</span></span><br><span class="line">            <span class="comment">// ActiveXObject在以下文档模式中受支持：Quirks、Internet Explorer 6 标准、Internet Explorer 7 标准、Internet Explorer 8 标准、Internet Explorer 9 标准、Internet Explorer 10 标准和 Internet Explorer 11 标准</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 区分具体的ie版本</span></span><br><span class="line">            <span class="comment">// let reIE = new RegExp("MSIE (\\d+\\.\\d+);");</span></span><br><span class="line">            <span class="comment">// reIE.test(explorer);</span></span><br><span class="line">            <span class="comment">// let fIEVersion = parseFloat(RegExp["$1"]);</span></span><br><span class="line">            <span class="comment">// IE6 = fIEVersion == 6.0;</span></span><br><span class="line">            <span class="comment">// IE7 = fIEVersion == 7.0;</span></span><br><span class="line">            <span class="comment">// IE8 = fIEVersion == 8.0;</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'ie'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Firefox'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Firefox'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Chrome'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Chrome'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Safari'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Safari'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>举例来说：一个函数接受4个参数，进行柯里化之后，柯里化版本的函数接受一个或多个参数并返回接受下一个参数的函数。直到最后一个函数（通过判断接收的参数数量与原函数的形参数量相同来判断），会将前面接受到的参数应用到原普通函数中，并返回最终结果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">a, b, c, d, e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 柯里化</span></span><br><span class="line">_fn(a)(b, c)(d)(e)之类的 </span><br><span class="line"></span><br><span class="line"><span class="comment">// 但是他们返回的结果和普通函数一致</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="创建ajax"><a href="#创建ajax" class="headerlink" title="创建ajax"></a>创建ajax</h4><ul>
-<li>新建XMLHttprequest的对象，ie只有11以上才行，而且还是部分支持。对于ie，我们可以通过ActiveXObject来实现</li>
+<h3 id="柯里化的用途"><a href="#柯里化的用途" class="headerlink" title="柯里化的用途"></a>柯里化的用途</h3><p>核心在于对函数参数的自由处理，本质是降低通用性，提高适用性。</p>
+<ul>
+<li>如：对数据的校验，校验手机号、邮箱之类的，我们可能会封装一个校验函数，把校验规则和数据内容传递进去。<strong>如果有多条数据，我们可能会调用多次这个函数，每次都需要把相同的校验规则再次传递</strong>。柯里化可以把校验规则这块相同的参数部分复用。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttpRequest</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlHttp ;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="comment">//FF,Opera,Safari  </span></span><br><span class="line">       xmlHttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">       <span class="keyword">try</span>&#123;  </span><br><span class="line">           <span class="comment">//支持IE6.0+  </span></span><br><span class="line">            xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);  </span><br><span class="line">       &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">           <span class="keyword">try</span>&#123;  </span><br><span class="line">              <span class="comment">//支持IE5.5+  </span></span><br><span class="line">              xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">           &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">              alert(<span class="string">"提示: 您的浏览器暂时不支持Ajax请求!"</span>);  </span><br><span class="line">              <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">           &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> xmlHttp;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="如何封装柯里化工具函数"><a href="#如何封装柯里化工具函数" class="headerlink" title="如何封装柯里化工具函数"></a>如何封装柯里化工具函数</h3><ul>
+<li>如何确定是否已经获取到足够的参数呢？</li>
+</ul>
+<p>1.通过函数的 length 属性，形参的个数那么就是实际所需的参数个数<br>2.在调用柯里化工具函数时，指定所需的参数个数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将函数柯里化</span></span><br><span class="line"><span class="comment"> * @param fn    待柯里化的原函数</span></span><br><span class="line"><span class="comment"> * @param len   所需的参数个数，默认为原函数的形参个数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn, len = fn.length</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// fn.length是指函数的形参数量</span></span><br><span class="line">    <span class="keyword">return</span> _curry.call(<span class="keyword">this</span>, fn, len)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 中转函数</span></span><br><span class="line"><span class="comment"> * @param fn    待柯里化的原函数</span></span><br><span class="line"><span class="comment"> * @param len   所需的参数个数</span></span><br><span class="line"><span class="comment"> * @param args  已接收的参数列表</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_curry</span>(<span class="params">fn, len, ...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">...params</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> _args = [...args, ...params];</span><br><span class="line">        <span class="keyword">if</span>(_args.length &gt;= len)&#123; <span class="comment">// 参数已经全部获取到</span></span><br><span class="line">            <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, _args);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> _curry.call(<span class="keyword">this</span>, fn, len, ..._args)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -178,26 +184,11 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">判断浏览器类型</a>
-        		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -247,7 +238,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/03/js-check-browser-type/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/16/curry/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -261,18 +252,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/11/hexo-setting/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/14/cross-domain/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hexo-setting 配置
+          cross-domain跨域解决方案
         
       </div>
     </a>
   
   
-    <a href="/2019/10/02/box-model/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">box-model</div>
+    <a href="/2019/08/12/markdown-2-pdf/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">markdown-2-pdf</div>
       <i class="icon-circle-right"></i>
     </a>
   

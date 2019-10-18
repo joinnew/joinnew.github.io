@@ -132,6 +132,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-http-status-301-302" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/15/http-status-301-302/">301和302状态码的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/15/http-status-301-302/" class="archive-article-date">
+  	<time datetime="2019-10-15T04:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官方的说明：</p>
+<pre><code>301 redirect: 301 代表永久性转移(Permanently Moved)
+
+302 redirect: 302 代表暂时性转移(Temporarily Moved )</code></pre>
+        
+          <a class="article-more-a" href="/2019/10/15/http-status-301-302/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HTTP状态码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo-setting" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -236,12 +311,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>判断浏览器类型，可以用于兼容，比如创建ajax请求</p>
-<h4 id="不考虑版本的区分浏览器"><a href="#不考虑版本的区分浏览器" class="headerlink" title="不考虑版本的区分浏览器"></a>不考虑版本的区分浏览器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkBrowser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> explorer = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!!<span class="built_in">window</span>.ActiveXObject || <span class="string">'ActiveXObject'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">            <span class="comment">// window.ActiveXObject的作用是用来判断浏览器是否支持ActiveX控件</span></span><br><span class="line">            <span class="comment">// ActiveXObject在以下文档模式中受支持：Quirks、Internet Explorer 6 标准、Internet Explorer 7 标准、Internet Explorer 8 标准、Internet Explorer 9 标准、Internet Explorer 10 标准和 Internet Explorer 11 标准</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 区分具体的ie版本</span></span><br><span class="line">            <span class="comment">// let reIE = new RegExp("MSIE (\\d+\\.\\d+);");</span></span><br><span class="line">            <span class="comment">// reIE.test(explorer);</span></span><br><span class="line">            <span class="comment">// let fIEVersion = parseFloat(RegExp["$1"]);</span></span><br><span class="line">            <span class="comment">// IE6 = fIEVersion == 6.0;</span></span><br><span class="line">            <span class="comment">// IE7 = fIEVersion == 7.0;</span></span><br><span class="line">            <span class="comment">// IE8 = fIEVersion == 8.0;</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'ie'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Firefox'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Firefox'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Chrome'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Chrome'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Safari'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Safari'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="创建ajax"><a href="#创建ajax" class="headerlink" title="创建ajax"></a>创建ajax</h4><ul>
-<li>新建XMLHttprequest的对象，ie只有11以上才行，而且还是部分支持。对于ie，我们可以通过ActiveXObject来实现</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttpRequest</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlHttp ;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="comment">//FF,Opera,Safari  </span></span><br><span class="line">       xmlHttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">       <span class="keyword">try</span>&#123;  </span><br><span class="line">           <span class="comment">//支持IE6.0+  </span></span><br><span class="line">            xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);  </span><br><span class="line">       &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">           <span class="keyword">try</span>&#123;  </span><br><span class="line">              <span class="comment">//支持IE5.5+  </span></span><br><span class="line">              xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">           &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">              alert(<span class="string">"提示: 您的浏览器暂时不支持Ajax请求!"</span>);  </span><br><span class="line">              <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">           &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> xmlHttp;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/10/03/js-check-browser-type/#more">more >></a>
+        
       
 
       
@@ -359,6 +431,139 @@
 		</ul>
 	</div>
 
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-cross-domain" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/14/cross-domain/">cross-domain跨域解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/14/cross-domain/" class="archive-article-date">
+  	<time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。<br>而广义上的跨域包括资源跳转（链接、重定向等）、资源嵌入（iframe）、脚本请求<br>我们通常所说的跨域是狭义上的，是由浏览器同源策略限制的一类请求场景。</p>
+        
+          <a class="article-more-a" href="/2019/09/14/cross-domain/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-curry" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/16/curry/">curry</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/16/curry/" class="archive-article-date">
+  	<time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个或多个参数的函数的技术。</p>
+        
+          <a class="article-more-a" href="/2019/08/16/curry/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
 
       
 
@@ -643,11 +848,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTTP状态码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,10 +869,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Markdown PDF工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">

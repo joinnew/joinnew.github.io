@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js判断浏览器类型 | Hexo</title>
+  <title>301和302状态码的区别 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
-<meta name="keywords" content="js,判断浏览器类型">
+  <meta name="description" content="官方的说明： 301 redirect: 301 代表永久性转移(Permanently Moved)  302 redirect: 302 代表暂时性转移(Temporarily Moved )">
+<meta name="keywords" content="HTTP状态码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js判断浏览器类型">
-<meta property="og:url" content="http://yoursite.com/2019/10/03/js-check-browser-type/index.html">
+<meta property="og:title" content="301和302状态码的区别">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/http-status-301-302/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta property="og:description" content="官方的说明： 301 redirect: 301 代表永久性转移(Permanently Moved)  302 redirect: 302 代表暂时性转移(Temporarily Moved )">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-13T05:35:59.326Z">
+<meta property="og:updated_time" content="2019-10-17T08:49:04.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js判断浏览器类型">
-<meta name="twitter:description" content="判断浏览器类型，可以用于兼容，比如创建ajax请求">
+<meta name="twitter:title" content="301和302状态码的区别">
+<meta name="twitter:description" content="官方的说明： 301 redirect: 301 代表永久性转移(Permanently Moved)  302 redirect: 302 代表暂时性转移(Temporarily Moved )">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -135,35 +135,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-check-browser-type" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-http-status-301-302" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js判断浏览器类型
+      301和302状态码的区别
     </h1>
   
 
         
-        <a href="/2019/10/03/js-check-browser-type/" class="archive-article-date">
-  	<time datetime="2019-10-03T05:03:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+        <a href="/2019/10/15/http-status-301-302/" class="archive-article-date">
+  	<time datetime="2019-10-15T04:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>判断浏览器类型，可以用于兼容，比如创建ajax请求</p>
-<a id="more"></a>
+        <p>官方的说明：</p>
+<pre><code>301 redirect: 301 代表永久性转移(Permanently Moved)
 
-<h4 id="不考虑版本的区分浏览器"><a href="#不考虑版本的区分浏览器" class="headerlink" title="不考虑版本的区分浏览器"></a>不考虑版本的区分浏览器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">checkBrowser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> explorer = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!!<span class="built_in">window</span>.ActiveXObject || <span class="string">'ActiveXObject'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">            <span class="comment">// window.ActiveXObject的作用是用来判断浏览器是否支持ActiveX控件</span></span><br><span class="line">            <span class="comment">// ActiveXObject在以下文档模式中受支持：Quirks、Internet Explorer 6 标准、Internet Explorer 7 标准、Internet Explorer 8 标准、Internet Explorer 9 标准、Internet Explorer 10 标准和 Internet Explorer 11 标准</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 区分具体的ie版本</span></span><br><span class="line">            <span class="comment">// let reIE = new RegExp("MSIE (\\d+\\.\\d+);");</span></span><br><span class="line">            <span class="comment">// reIE.test(explorer);</span></span><br><span class="line">            <span class="comment">// let fIEVersion = parseFloat(RegExp["$1"]);</span></span><br><span class="line">            <span class="comment">// IE6 = fIEVersion == 6.0;</span></span><br><span class="line">            <span class="comment">// IE7 = fIEVersion == 7.0;</span></span><br><span class="line">            <span class="comment">// IE8 = fIEVersion == 8.0;</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'ie'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Firefox'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Firefox'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Chrome'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Chrome'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (explorer.indexOf(<span class="string">'Safari'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'Safari'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+302 redirect: 302 代表暂时性转移(Temporarily Moved )</code></pre><a id="more"></a>
 
-<h4 id="创建ajax"><a href="#创建ajax" class="headerlink" title="创建ajax"></a>创建ajax</h4><ul>
-<li>新建XMLHttprequest的对象，ie只有11以上才行，而且还是部分支持。对于ie，我们可以通过ActiveXObject来实现</li>
+<p>3xx系列的都表示重定向，就是说浏览器在拿到服务器返回的这个状态码后会自动跳转到一个新的URL地址。这个地址可以从响应的Location首部中获取（用户看到的效果就是他输入的地址A瞬间变成了另一个地址B）——这是它们的共同点。</p>
+<ul>
+<li><p>重定向就是通过各种方法将各种网络请求重新定个方向转到其它位置（如：网页重定向、域名的重定向、路由选择的变化也是对数据报文经由路径的一种重定向）。</p>
+</li>
+<li><p>301表示旧地址的某个资源已经被永久移除了，<strong>搜索引擎在抓取新内容的同时也将旧的网址交换为重定向之后的网址</strong></p>
+</li>
+<li><p>302则表示旧地址的某个资源还在（仍然可以访问），这个重定向只是临时地从旧地址A跳转到地址B，<strong>搜索引擎会抓取新的内容而保存旧的网址</strong></p>
+</li>
+<li><p>需要重定向的情况：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 网页扩展名修改</span></span><br><span class="line">如果不做重定向，则用户收藏夹或搜索引擎数据库中旧地址只能让访问客户得到一个404页面错误信息；再者某些注册了多个域名的网站，也需要通过重定向让访问这些域名的用户自动跳转到主站点等。</span><br><span class="line"></span><br><span class="line">使用301跳转的场景：</span><br><span class="line">1. 在搜索引擎的搜索结果中出现了不带www的域名，而带www的域名却没有收录，这个时候可以用301重定向来告诉搜索引擎我们目标的域名是哪一个。</span><br><span class="line">2. 域名到期不想续费（或者发现了更适合网站的域名），想换个域名。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为什么提示尽量使用301跳转？ - 网络劫持<br>百度百科的解释：</p>
+</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttpRequest</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> xmlHttp ;  </span><br><span class="line">    <span class="keyword">try</span>&#123;  </span><br><span class="line">       <span class="comment">//FF,Opera,Safari  </span></span><br><span class="line">       xmlHttp = <span class="keyword">new</span> XMLHttpRequest();  </span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">       <span class="keyword">try</span>&#123;  </span><br><span class="line">           <span class="comment">//支持IE6.0+  </span></span><br><span class="line">            xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxml2.XMLHTTP"</span>);  </span><br><span class="line">       &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">           <span class="keyword">try</span>&#123;  </span><br><span class="line">              <span class="comment">//支持IE5.5+  </span></span><br><span class="line">              xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);  </span><br><span class="line">           &#125;<span class="keyword">catch</span>(e)&#123;  </span><br><span class="line">              alert(<span class="string">"提示: 您的浏览器暂时不支持Ajax请求!"</span>);  </span><br><span class="line">              <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">           &#125;  </span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> xmlHttp;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>从网址A 做一个302 重定向到网址B 时，主机服务器的隐含意思是网址A 随时有可能改主意，重新显示本身的内容或转向其他的地方。大部分的搜索引擎在大部分情况下，当收到302 重定向时，一般只要去抓取目标网址就可以了，也就是说网址B。如果搜索引擎在遇到302 转向时，百分之百的都抓取目标网址B 的话，就不用担心网址URL 劫持了。问题就在于，有的时候搜索引擎，尤其是Google，并不能总是抓取目标网址。比如说，有的时候A 网址很短，但是它做了一个302 重定向到B 网址，而B 网址是一个很长的乱七八糟的URL 网址，甚至还有可能包含一些问号之类的参数。很自然的，A 网址更加用户友好，而B 网址既难看，又不用户友好。这时Google 很有可能会仍然显示网址A。由于搜索引擎排名算法只是程序而不是人，在遇到302 重定向的时候，并不能像人一样的去准确判定哪一个网址更适当，这就造成了网址URL 劫持的可能性。也就是说，一个不道德的人在他自己的网址A 做一个302 重定向到你的网址B，出于某种原因， Google 搜索结果所显示的仍然是网址A，但是所用的网页内容却是你的网址B 上的内容，这种情况就叫做网址URL 劫持。你辛辛苦苦所写的内容就这样被别人偷走了。302 重定向所造成的网址URL 劫持现象，已经存在一段时间了。不过到目前为止，似乎也没有什么更好的解决方法。在正在进行的谷歌大爸爸数据中心转换中，302 重定向问题也是要被解决的目标之一。从一些搜索结果来看，网址劫持现象有所改善，但是并没有完全解决。</em></p>
+
       
 
       
@@ -176,28 +188,13 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">判断浏览器类型</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HTTP状态码</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -247,7 +244,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/03/js-check-browser-type/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/15/http-status-301-302/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -261,18 +258,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/11/hexo-setting/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo-setting 配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/02/box-model/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">box-model</div>
+    <a href="/2019/10/11/hexo-setting/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo-setting 配置</div>
       <i class="icon-circle-right"></i>
     </a>
   

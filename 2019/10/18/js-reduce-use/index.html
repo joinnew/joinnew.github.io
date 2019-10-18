@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: js | Hexo</title>
+  <title>reduce的使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
+  <meta name="description" content="定义： reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右, 每个值都会进行一次处理 res 就是前一个值处理的结果）开始缩减，最终计算为一个值。语法： array.reduce(function(total, currentValue, currentIndex - 可选, arr - 可选), initialValue - 可选,也可以是[], {}之类的默认值)">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="reduce的使用">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/js-reduce-use/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定义： reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右, 每个值都会进行一次处理 res 就是前一个值处理的结果）开始缩减，最终计算为一个值。语法： array.reduce(function(total, currentValue, currentIndex - 可选, arr - 可选), initialValue - 可选,也可以是[], {}之类的默认值)">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-18T14:56:44.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="reduce的使用">
+<meta name="twitter:description" content="定义： reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右, 每个值都会进行一次处理 res 就是前一个值处理的结果）开始缩减，最终计算为一个值。语法： array.reduce(function(total, currentValue, currentIndex - 可选, arr - 可选), initialValue - 可选,也可以是[], {}之类的默认值)">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -130,36 +135,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-js-reduce-use" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      reduce的使用
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/18/js-reduce-use/" class="archive-article-date">
+
+        
+        <a href="/2019/10/18/js-reduce-use/" class="archive-article-date">
   	<time datetime="2019-10-18T13:38:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/18/js-reduce-use/">reduce的使用</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>定义： reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右, <strong>每个值都会进行一次处理 res 就是前一个值处理的结果</strong>）开始缩减，最终计算为一个值。<br>语法： array.reduce(function(total, currentValue, currentIndex - 可选, arr - 可选), initialValue - 可选,<strong>也可以是[], {}之类的默认值</strong>)</p>
+<a id="more"></a>
+<ul>
+<li><p>用法一：数组的项进行叠加，得出最终相加的结果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本数据数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> sum = arr.reduce(<span class="function">(<span class="params">total, curVal</span>) =&gt;</span> total + curVal, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象数组处理</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">'zs'</span>,</span><br><span class="line">        age: <span class="number">10</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">'ls'</span>,</span><br><span class="line">        age: <span class="number">20</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">'ww'</span>,</span><br><span class="line">        age: <span class="number">23</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sum = arr1.reduce(<span class="function">(<span class="params">total, curVal</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> total + curVal.age</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">let</span> sum1 = arr1.reduce(<span class="function">(<span class="params">total, &#123; age &#125;</span>) =&gt;</span> total + age, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法二：字符串中每个字符出现的次数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'321323dsafwrwer**$234dsafghbh'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = str.split(<span class="string">''</span>).reduce(<span class="function">(<span class="params">res, cur</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 也是利用对象属性的唯一特性</span></span><br><span class="line">    res[cur] ? res[cur]++ : res[cur] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法三：数组最大值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">4324</span>, <span class="number">43242</span>, <span class="number">545</span>, <span class="number">12</span>, <span class="number">890</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> max = arr.reduce(<span class="function">(<span class="params">res, cur</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> res &gt; cur ? res : cur</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法四：从对象数组中提取出某个属性，将这个属性单独变成一个数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'上海'</span>,</span><br><span class="line">        num: <span class="number">1000</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'北京'</span>,</span><br><span class="line">        num: <span class="number">2000</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'南京'</span>，</span><br><span class="line">        num: <span class="number">903</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = arr.reduce(<span class="function">(<span class="params">total, &#123; city &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    total.push(city);</span><br><span class="line">    <span class="keyword">return</span> total;</span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法五：对象数组去重</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">const</span> arr = [</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'上海'</span>,</span><br><span class="line">        num: <span class="number">1000</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'北京'</span>,</span><br><span class="line">        num: <span class="number">2000</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'南京'</span>,</span><br><span class="line">        num: <span class="number">903</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        city: <span class="string">'北京'</span>,</span><br><span class="line">        num: <span class="number">12323</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isExistedData = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> res = arr.reduce(<span class="function">(<span class="params">res, cur</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isExistedData(cur.city)) &#123;</span><br><span class="line">        isExistedData[cur.city] = <span class="literal">true</span>;</span><br><span class="line">        res.push(cur);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用法六：扁平一个多维数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>], [<span class="number">12</span>, <span class="number">23</span>]];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = arr.reduce(<span class="function">(<span class="params">res, cur</span>) =&gt;</span> res.concat(cur), []);</span><br></pre></td></tr></table></figure></li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -171,7 +195,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -184,108 +208,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/18/js-reduce-use/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/js-check-browser-type/" class="archive-article-date">
-  	<time datetime="2019-10-03T05:03:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/15/http-status-301-302/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">301和302状态码的区别</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/js-check-browser-type/">js判断浏览器类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">判断浏览器类型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/16/curry/" class="archive-article-date">
-  	<time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/16/curry/">curry</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -308,9 +328,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

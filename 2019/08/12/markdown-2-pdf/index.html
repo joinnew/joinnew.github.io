@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>markdown-2-pdf | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿">
+  <meta name="description" content="简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿。其有自己的默认格式，这里还记录了如何修改这些默认格式，比如：去掉右上角的时间展示">
 <meta name="keywords" content="Markdown PDF工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="markdown-2-pdf">
 <meta property="og:url" content="http://yoursite.com/2019/08/12/markdown-2-pdf/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿">
+<meta property="og:description" content="简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿。其有自己的默认格式，这里还记录了如何修改这些默认格式，比如：去掉右上角的时间展示">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-12T12:52:30.944Z">
+<meta property="og:updated_time" content="2019-10-28T16:07:38.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown-2-pdf">
-<meta name="twitter:description" content="简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿">
+<meta name="twitter:description" content="简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿。其有自己的默认格式，这里还记录了如何修改这些默认格式，比如：去掉右上角的时间展示">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,7 +155,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿</p>
+        <p>简历想要符合自己的想法来写，使用模版也不好操作。索性直接用markdown的形式来写好了，够简约。不过其实是借用了vscode的插件，嘿嘿。其有自己的默认格式，这里还记录了如何修改这些默认格式，比如：去掉右上角的时间展示</p>
 <a id="more"></a>
 <h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><ul>
 <li>VSCode安装插件 Markdown PDF</li>
@@ -167,7 +167,12 @@
 <li><p>找到chrome的运行文件（windows中是以.exe结尾的，而mac中可以把应用程序拖到终端中进行查看地址）</p>
 </li>
 <li><p>选择VSCode的右上角Code选项-首选项-设置-找到markdown-pdf（任意一个，点击 下边的在settings.json中配置Edit in settings.json）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"markdown-pdf.executablePath"</span>: <span class="string">"\/Applications\/Google Chrome.app\/Contents\/MacOS\/Google Chrome"</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"markdown-pdf.executablePath"</span>: <span class="string">"\/Applications\/Google Chrome.app\/Contents\/MacOS\/Google Chrome"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="修改默认格式"><a href="#修改默认格式" class="headerlink" title="修改默认格式"></a>修改默认格式</h3><ul>
+<li>找到Markdown PDF的setting.json配置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"markdown-pdf.headerTemplate"</span>: <span class="string">"&lt;div&gt;&lt;/div&gt;"</span> <span class="comment"># 设置头部的展示内容</span></span><br><span class="line"><span class="string">"markdown-pdf.footerTemplate"</span>: <span class="string">"&lt;div&gt;&lt;/div&gt;"</span> <span class="comment"># 设置尾部的展示内容</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
